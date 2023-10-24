@@ -52,7 +52,7 @@ def filter_items(query):
                 offers["BRAND"] == brand_similarities["BRAND"].iloc[0]
             ]
             ret_offer_similarities = get_topn_similar(query, offers_in_brand)
-            if len(ret_offer_similarities) > 0:
+            if ret_offer_similarities!=None and len(ret_offer_similarities) > 0:
                 # Return the top offers in the brand if they exist
                 return ret_offer_similarities[["OFFER", "similarity"]]
             else:
@@ -68,7 +68,7 @@ def filter_items(query):
             == category_similarities["PRODUCT_CATEGORY"].iloc[0]
         ]
         # Return offers in the category if they exist
-        if len(ret_df) > 0:
+        if ret_df!=None and len(ret_df) > 0:
             return ret_df[["OFFER", "similarity"]]
         else:
             # Otherwise, check for offers in the parent category
@@ -77,13 +77,14 @@ def filter_items(query):
                 offer_similarities["IS_CHILD_CATEGORY_TO"] == parent_category
             ]
             # Return offers in the parent category if they exist
-            if len(ret_df) > 0:
+            if ret_df!=None and len(ret_df) > 0:
                 return ret_df[["OFFER", "similarity"]]
             else:
                 # If no matches are found in either category, return the top offers
                 return offer_similarities[["OFFER", "similarity"]]
     # Log when the end of the function is reached without a specific return
     logger.info("Reached end of function.")
+    return pd.DataFrame()
 
 
 def app():
