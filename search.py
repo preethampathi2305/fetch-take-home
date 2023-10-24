@@ -7,7 +7,6 @@ import streamlit as st
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-# set torch device to cpu
 device = torch.device('cpu')
 
 
