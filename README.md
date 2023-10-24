@@ -5,6 +5,9 @@
 ## Overview
 The Search App provides an interface for users to input a query and get the top search results based on the query. It leverages embeddings to rank and display the most relevant items.
 
+## Architecture Diagram
+![Architecture Diagram](src/diagram.png)
+
 ## Files
 
 ### 1. search.py
