@@ -1,4 +1,4 @@
-# Deployment Link: http://3.88.12.103:8501/
+# Deployment Link: http://fetch-balancer-916446164.us-east-1.elb.amazonaws.com:8501/
 
 # Documentation for Search App
 
